@@ -81,6 +81,7 @@
 
             if (secondDegrees == 90) {
                 secondHand.style.transition = 'all 0s';
+                secondHand.style.transform = `rotate(${secondDegrees}deg)`;
             } else {
                 secondHand.style.transition = 'all 0.5s'; // Adjusting the transition duration
                 secondHand.style.transform = `rotate(${secondDegrees}deg)`;
@@ -88,6 +89,7 @@
 
             if (minuteDegrees == 90) {
                 minuteHand.style.transition = 'all 0s';
+                minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
             } else {
                 minuteHand.style.transition = 'all 0.5s'; // Adjusting the transition duration
                 minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
@@ -95,6 +97,7 @@
 
             if (hourDegrees == 90) {
                 hourHand.style.transition = 'all 0s';
+                hourHand.style.transform = `rotate(${hourDegrees}deg)`;
             } else {
                 hourHand.style.transition = 'all 0.5s'; // Adjusting the transition duration
                 hourHand.style.transform = `rotate(${hourDegrees}deg)`;
