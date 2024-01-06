@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLOCK</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
-/* border: 1px solid blue; */
         }
-        body{
-            background-color: rgb(113, 113, 219);
+
+        body {
+         background-image: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F04%2FBackgrounds-space-wallpaper-HD.jpg&f=1&nofb=1&ipt=741244f97e37c73978c8d2547801265841c537401900ae17987156bbf1c2bd6c&ipo=images);
+         background-size: cover;
+         height:100vh;
+         opacity: 0.5;
         }
-        .clock{
-            display:flex;
+
+        .clock {
+            display: flex;
             justify-content: center;
             align-items: center;
 
 
 
         }
-        .clockFace{
+
+        .clockFace {
             height: 400px;
             width: 400px;
             border: 20px solid rgb(255, 255, 255);
             border-radius: 50%;
             position: absolute;
-            top:25%;
-            
-        
+            top: 25%;
+
+
+
         }
-        .hand{
+
+        .hand {
             background-color: black;
-            height: 2px;
+            height: 3px;
             width: 50%;
             position: absolute;
-            top:50%;
+            top: 50%;
             transform-origin: 100%;
             transition: all 0.5s;
             transform: rotate(90deg);
-            transition-timing-function:cubic-bezier(1, 0.01, 0, 0.98);
+            transition-timing-function: cubic-bezier(1, 0.01, 0, 0.98);
+            border-radius: 2px;
         }
     </style>
+
 </head>
+
 <body>
     <div class="clock">
         <div class="clockFace">
@@ -52,89 +63,55 @@
             <div class="hand hour"></div>
         </div>
     </div>
-    
+
     <script>
-        // const secondHand=document.querySelector('.second');
-        // const minuteHand=document.querySelector('.minute');
-        // const hourHand=document.querySelector('.hour');
-        // function setDate(){
-        //     const nowDate= new Date();
-        //     const second= nowDate.getSeconds();
-        //     const secondDegrees=((second/60)*360) + 90;
-        //     const minute=nowDate.getMinutes();
-        //     const minuteDegrees=(minute/60) +90;
-        //     const hour= nowDate.getHours();
-        //     const hourDegrees=((hour/24)*360) +90;
-        //     if(secondDegrees==90)
-        //     {
-        //         secondHand.setAttribute('style','transition: all 0s;')
-        //     }
-        //     else{
-        //         secondHand.style.transform=`rotate(${secondDegrees}deg)`;
-        //     }
-        //     if(minuteDegrees==90)
-        //     {
-        //         minuteHand.setAttribute('style','transition: all 0s;')
-        //     }
-        //     else{
-        //         minuteHand.style.transform=`rotate(${minuteDegrees}deg)`;
-        //     }
-        //     if(hourDegrees==90)
-        //     {
-        //         hourHand.setAttribute('style','transition: all 0s;')
-        //     }
-        //     else{
-        //         hourHand.style.transform=`rotate(${hourDegrees}deg)`;
-        //     }
-
-        // }
-        // setInterval(setDate,1000);
         const secondHand = document.querySelector('.second');
-const minuteHand = document.querySelector('.minute');
-const hourHand = document.querySelector('.hour');
-let isFirstSecondAfterTwelve = true;
+        const minuteHand = document.querySelector('.minute');
+        const hourHand = document.querySelector('.hour');
+        let isFirstSecondAfterTwelve = true;
 
-function setDate() {
-    const nowDate = new Date();
-    const second = nowDate.getSeconds();
-    const secondDegrees = (second / 60) * 360 + 90;
-    const minute = nowDate.getMinutes();
-    const minuteDegrees = (minute / 60) * 360 + 90;
-    const hour = nowDate.getHours();
-    const hourDegrees = (hour / 12) * 360 + 90;
+        function setDate() {
+            const nowDate = new Date();
+            const second = nowDate.getSeconds();
+            const secondDegrees = (second / 60) * 360 + 90;
+            const minute = nowDate.getMinutes();
+            const minuteDegrees = (minute / 60) * 360 + 90;
+            const hour = nowDate.getHours();
+            const hourDegrees = (hour / 12) * 360 + 90;
 
-    if (secondDegrees == 90) {
-        secondHand.style.transition = 'all 0s';
-    } else {
-        secondHand.style.transition = 'all 0.5s'; // Adjust the transition duration
-        secondHand.style.transform = `rotate(${secondDegrees}deg)`;
-    }
+            if (secondDegrees == 90) {
+                secondHand.style.transition = 'all 0s';
+            } else {
+                secondHand.style.transition = 'all 0.5s'; // Adjusting the transition duration
+                secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+            }
 
-    if (minuteDegrees == 90) {
-        minuteHand.style.transition = 'all 0s';
-    } else {
-        minuteHand.style.transition = 'all 0.5s'; // Adjust the transition duration
-        minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
-    }
+            if (minuteDegrees == 90) {
+                minuteHand.style.transition = 'all 0s';
+            } else {
+                minuteHand.style.transition = 'all 0.5s'; // Adjusting the transition duration
+                minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
+            }
 
-    if (hourDegrees == 90) {
-        hourHand.style.transition = 'all 0s';
-    } else {
-        hourHand.style.transition = 'all 0.5s'; // Adjust the transition duration
-        hourHand.style.transform = `rotate(${hourDegrees}deg)`;
-    }
+            if (hourDegrees == 90) {
+                hourHand.style.transition = 'all 0s';
+            } else {
+                hourHand.style.transition = 'all 0.5s'; // Adjusting the transition duration
+                hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+            }
 
-    if (isFirstSecondAfterTwelve) {
-        isFirstSecondAfterTwelve = false;
-        setTimeout(() => {
-            secondHand.style.transition = 'all 0.5s'; // Restore the transition after one second
-        }, 1000);
-    }
-}
+            if (isFirstSecondAfterTwelve) {
+                isFirstSecondAfterTwelve = false;
+                setTimeout(() => {
+                    secondHand.style.transition = 'all 0.5s'; // Restoring the transition after one second
+                }, 1000);
+            }
+        }
 
-setInterval(setDate, 1000);
+        setInterval(setDate, 1000);
 
 
     </script>
 </body>
+
 </html>
