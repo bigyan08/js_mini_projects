@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DS+Digital&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            background-color: #e9c2c2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'ds-digital'
+        }
+
+        .container {
+            width: 35rem;
+            height: 15rem;
+            margin-top: 10rem;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15rem;
+
+        }
+
+        .clockface {
+            width: 30rem;
+            height: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10rem;
+            background-color: white;
+            border-radius: 15rem;
+            position: fixed;
+
+        }
+
+        .second {
+            font-size: 3rem;
+            position: relative;
+            top: 2.2rem;
+            left: 1rem;
+            width: 3rem;
+        }
+        .hour, .minute{
+            width: 10rem;
+        }
+    
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clockface">
+            <div class="digit hour">10</div>
+            <div class="digit colon">:</div>
+            <div class="digit minute">20</div>
+            <div class="digit second">50</div>
+        </div>
+    </div>
+    <script>
+        const secondDigi = document.querySelector('.second');
+        const minuteDigi = document.querySelector('.minute');
+        const hourDigi = document.querySelector('.hour');
+        function time() {
+            const newDate = new Date();
+            const second = newDate.getSeconds();
+            const minute = newDate.getMinutes();
+            const hour = newDate.getHours();
+            hourDigi.innerHTML = hour;
+            secondDigi.innerHTML = second;
+            minuteDigi.innerHTML = minute;
+            if(hour<10){
+                hourDigi.innerHTML = '0'+hour;
+            }
+            if(minute<10){
+                minuteDigi.innerHTML = '0'+minute;
+            }
+            if(second<10){
+                secondDigi.innerHTML = '0'+second;
+            }
+        }
+        setInterval(time, 1000);
+    </script>
+
+</body>
+
+</html>
