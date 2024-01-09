@@ -23,7 +23,7 @@
         }
 
         .container {
-            width: 35rem;
+            width: 95%;
             height: 15rem;
             margin-top: 10rem;
             background-color: black;
@@ -31,19 +31,22 @@
             justify-content: center;
             align-items: center;
             border-radius: 15rem;
+            max-width: 40%;
 
         }
 
         .clockface {
-            width: 30rem;
-            height: 10rem;
+            width: 90%;
+            height: 80%;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 10rem;
             background-color: white;
             border-radius: 15rem;
-            position: fixed;
+            position:relative;
+            max-width: 90%;
+
 
         }
 
@@ -56,6 +59,49 @@
         }
         .hour, .minute{
             width: 10rem;
+        }
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 95%;
+                height: 8rem;
+                margin-top: 10rem;
+                background-color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15rem;
+                max-width: 90%;
+
+            }
+
+            .clockface {
+                width: 90%;
+                height: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 6rem;
+                background-color: white;
+                border-radius: 10rem;
+                position: relative;
+                max-width: 90%;
+
+
+            }
+
+            .second {
+                font-size: 1.5rem;
+                position: relative;
+                top: 2.2rem;
+                left: 1rem;
+                width: 3rem;
+            }
+
+            .hour,
+            .minute {
+                width: 5rem;
+            }
+            
         }
     
 
